@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import "@/styles/globals.css";
 import { ReactNode } from "react";
-import { Providers } from "@/components";
 import { Nanum_Gothic } from "next/font/google";
+import { Providers } from "@/components";
+import "@/styles/globals.css";
 
-const nanumGothic = Nanum_Gothic({ weight: ["400"] });
+const nanumGothic = Nanum_Gothic({ weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "Interview Mate",
@@ -15,7 +15,9 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="ko">
       <body className={nanumGothic.className}>
-        <Providers>{children}</Providers>
+        <main className="mx-auto px-4 w-full max-w-3xl min-h-dvh">
+          <Providers>{children}</Providers>
+        </main>
       </body>
     </html>
   );
